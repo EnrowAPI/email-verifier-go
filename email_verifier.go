@@ -15,6 +15,7 @@ type VerificationResult struct {
 	ID            string `json:"id"`
 	Email         string `json:"email,omitempty"`
 	Qualification string `json:"qualification,omitempty"`
+	Custom        string `json:"custom,omitempty"`
 	Status        string `json:"status,omitempty"`
 	Message       string `json:"message,omitempty"`
 	CreditsUsed   int    `json:"creditsUsed,omitempty"`
@@ -85,9 +86,12 @@ type settings struct {
 }
 
 // VerifyEmail starts a single email verification and returns the initial result.
-func VerifyEmail(apiKey, email string, webhook string) (*VerificationResult, error) {
+func VerifyEmail(apiKey, email string, custom string, webhook string) (*VerificationResult, error) {
 	body := map[string]interface{}{
 		"email": email,
+	}
+	if custom != "" {
+		body["custom"] = custom
 	}
 	if webhook != "" {
 		body["settings"] = settings{Webhook: webhook}
@@ -120,14 +124,12 @@ func GetVerificationResult(apiKey, id string) (*VerificationResult, error) {
 }
 
 // VerifyEmails starts a bulk email verification and returns the batch info.
-func VerifyEmails(apiKey string, emails []string, webhook string) (*BulkVerificationResult, error) {
-	verifications := make([]map[string]string, len(emails))
-	for i, email := range emails {
-		verifications[i] = map[string]string{"email": email}
-	}
-
+func VerifyEmails(apiKey string, emails []string, custom string, webhook string) (*BulkVerificationResult, error) {
 	body := map[string]interface{}{
-		"verifications": verifications,
+		"emails": emails,
+	}
+	if custom != "" {
+		body["custom"] = custom
 	}
 	if webhook != "" {
 		body["settings"] = settings{Webhook: webhook}
