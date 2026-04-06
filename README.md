@@ -1,7 +1,9 @@
 # Email Verifier - Go Library
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/enrow/email-verifier-go.svg)](https://pkg.go.dev/github.com/enrow/email-verifier-go)
+[![Go Reference](https://pkg.go.dev/badge/github.com/EnrowAPI/email-verifier-go.svg)](https://pkg.go.dev/github.com/EnrowAPI/email-verifier-go)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/EnrowAPI/email-verifier-go)](https://github.com/EnrowAPI/email-verifier-go)
+[![Last commit](https://img.shields.io/github/last-commit/EnrowAPI/email-verifier-go)](https://github.com/EnrowAPI/email-verifier-go/commits)
 
 Verify email addresses in real time. Check deliverability, detect disposable and catch-all mailboxes, and clean your lists before sending. Integrate email verification into your sales pipeline, CRM sync, or outreach workflow.
 
@@ -10,7 +12,7 @@ Powered by [Enrow](https://enrow.io) -- each verification costs just 0.25 credit
 ## Installation
 
 ```bash
-go get github.com/enrow/email-verifier-go
+go get github.com/EnrowAPI/email-verifier-go
 ```
 
 Requires Go 1.21+. Zero dependencies.
@@ -24,7 +26,7 @@ import (
 	"fmt"
 	"log"
 
-	emailverifier "github.com/enrow/email-verifier-go"
+	emailverifier "github.com/EnrowAPI/email-verifier-go"
 )
 
 func main() {
@@ -98,7 +100,7 @@ Paid plans start at **$17/mo** for 1,000 emails up to **$497/mo** for 100,000 em
 ## Documentation
 
 - [Enrow API documentation](https://docs.enrow.io)
-- [Full Enrow SDK](https://github.com/enrow/enrow-go) -- includes email finder, phone finder, reverse email lookup, and more
+- [Full Enrow SDK](https://github.com/EnrowAPI/enrow-go) -- includes email finder, phone finder, reverse email lookup, and more
 
 ## License
 
